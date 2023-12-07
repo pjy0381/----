@@ -3,15 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	var a, b int
-	fmt.Scan(&a, &b)
-	result := "=="
+	var h, m int
+	fmt.Scan(&h, &m)
 
-	if a > b {
-		result = ">"
-	} else if a < b {
-		result = "<"
+	t := h*60 + m
+	t -= 45
+
+	if t < 0 {
+		t += 24 * 60
 	}
 
-	fmt.Println(result)
+	fmt.Printf("%d %d", t/60, t%60)
 }
